@@ -240,6 +240,8 @@ function nonPageFileManipulation(context, name, ngModulePath, type) {
                     typescriptFilePath = helpers_3.changeExtension(templatesArray.filter(function (path) { return path_1.extname(path) === '.ts'; })[0], '');
                     helpers_2.readFileAsync(ngModulePath).then(function (content) {
                         importPath = type === 'pipe' || type === 'component' || type === 'directive'
+                            // Insert `./` if it's a pipe component or directive
+                            // Since these will go in a common module.
                             ? helpers_1.toUnixPath("./" + path_1.relative(path_1.dirname(ngModulePath), hydratedRequest.dirToWrite) + path_1.sep + hydratedRequest.fileName)
                             : helpers_1.toUnixPath("" + path_1.relative(path_1.dirname(ngModulePath), hydratedRequest.dirToWrite) + path_1.sep + hydratedRequest.fileName);
                         content = typescript_utils_1.insertNamedImportIfNeeded(ngModulePath, content, hydratedRequest.className, importPath);

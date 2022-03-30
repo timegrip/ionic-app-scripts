@@ -427,8 +427,11 @@ function removeCaseFromString(input, inReplacement) {
         return replacement;
     }
     var modified = input
+        // Support camel case ("camelCase" -> "camel Case").
         .replace(camel_case_regexp_1.CAMEL_CASE_REGEXP, '$1 $2')
+        // Support odd camel case ("CAMELCase" -> "CAMEL Case").
         .replace(camel_case_upper_regexp_1.CAMEL_CASE_UPPER_REGEXP, '$1 $2')
+        // Remove all non-word characters and replace with a single space.
         .replace(non_word_regexp_1.NON_WORD_REGEXP, replace);
     return modified.toLowerCase();
 }

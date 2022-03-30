@@ -10,7 +10,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var BuildError = (function (_super) {
+var BuildError = /** @class */ (function (_super) {
     __extends(BuildError, _super);
     function BuildError(error) {
         var _this = _super.call(this, error instanceof Error ? error.message : error) || this;
@@ -32,7 +32,7 @@ exports.BuildError = BuildError;
  * For our sake, it is much easier to get off the happy path of code and just throw an exception
  * and do nothing with it
  */
-var IgnorableError = (function (_super) {
+var IgnorableError = /** @class */ (function (_super) {
     __extends(IgnorableError, _super);
     function IgnorableError(msg) {
         return _super.call(this, msg) || this;

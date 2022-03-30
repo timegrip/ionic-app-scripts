@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var FileCache = (function () {
+var FileCache = /** @class */ (function () {
     function FileCache() {
         this.map = new Map();
     }

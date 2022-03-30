@@ -71,7 +71,7 @@ function compileLanguage(language) {
                     compiled_keywords[pair[0]] = [className, pair[1] ? Number(pair[1]) : 1];
                 });
             };
-            if (typeof mode.keywords === 'string') {
+            if (typeof mode.keywords === 'string') { // string
                 flatten('keyword', mode.keywords);
             }
             else {
@@ -124,7 +124,7 @@ function compileLanguage(language) {
             .concat([mode.terminator_end, mode.illegal])
             .map(reStr)
             .filter(Boolean);
-        mode.terminators = terminators.length ? langRe(terminators.join('|'), true) : { exec: function () { return null; } };
+        mode.terminators = terminators.length ? langRe(terminators.join('|'), true) : { exec: function ( /*s*/) { return null; } };
     }
     compileMode(language);
 }
@@ -359,7 +359,7 @@ function highlight(name, value, ignore_illegals, continuation) {
             index = match.index + count;
         }
         processLexeme(value.substr(index));
-        for (current = top; current.parent; current = current.parent) {
+        for (current = top; current.parent; current = current.parent) { // close dangling modes
             if (current.className) {
                 result += spanEndTag;
             }

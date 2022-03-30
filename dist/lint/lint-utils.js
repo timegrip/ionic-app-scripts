@@ -23,6 +23,8 @@ function lintFiles(context, program, tsLintConfig, filePaths, linterOptions) {
         .then(function (diagnostics) { return processTypeCheckDiagnostics(context, diagnostics); })
         .then(function () { return Promise.all(filePaths.map(function (filePath) { return lintFile(linter, config, filePath); }))
         .then(function () { return lint_factory_1.getLintResult(linter); })
+        // NOTE: We only need to process the lint result after we ran the linter on all the files,
+        // otherwise we'll end up with duplicated messages if we process the result after each file gets linted.
         .then(function (result) { return processLintResult(context, result); }); });
 }
 exports.lintFiles = lintFiles;

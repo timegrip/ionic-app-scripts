@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var path_1 = require("path");
 var events_1 = require("../util/events");
 var logger_1 = require("../logger/logger");
-var WatchMemorySystem = (function () {
+var WatchMemorySystem = /** @class */ (function () {
     function WatchMemorySystem(fileCache, srcDir) {
         this.fileCache = fileCache;
         this.srcDir = srcDir;

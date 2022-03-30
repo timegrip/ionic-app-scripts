@@ -49,7 +49,6 @@ function getFontFileNamesToPurge(target, platform, fileNames) {
                 filesToDelete.add(fileName);
             }
         }
-        // for now don't bother deleting anything for windows, need to get some info first
     }
     return Array.from(filesToDelete);
 }

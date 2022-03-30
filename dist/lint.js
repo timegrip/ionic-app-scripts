@@ -56,6 +56,7 @@ function lintUpdateWorker(context, _a) {
     var program = lint_factory_1.createProgram(context, tsConfig);
     return getLintConfig(context, tsLintConfig)
         .then(function (tsLintConfig) { return lint_utils_1.lintFiles(context, program, tsLintConfig, filePaths, { typeCheck: typeCheck }); })
+        // Don't throw if linting failed
         .catch(function () { });
 }
 exports.lintUpdateWorker = lintUpdateWorker;

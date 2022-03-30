@@ -11,7 +11,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var dev = Math.floor(Math.random() * 10000);
-var VirtualStats = (function () {
+var VirtualStats = /** @class */ (function () {
     function VirtualStats(_path) {
         this._path = _path;
         this._ctime = new Date();
@@ -105,7 +105,7 @@ var VirtualStats = (function () {
     return VirtualStats;
 }());
 exports.VirtualStats = VirtualStats;
-var VirtualDirStats = (function (_super) {
+var VirtualDirStats = /** @class */ (function (_super) {
     __extends(VirtualDirStats, _super);
     function VirtualDirStats(_fileName) {
         return _super.call(this, _fileName) || this;
@@ -119,7 +119,7 @@ var VirtualDirStats = (function (_super) {
     return VirtualDirStats;
 }(VirtualStats));
 exports.VirtualDirStats = VirtualDirStats;
-var VirtualFileStats = (function (_super) {
+var VirtualFileStats = /** @class */ (function (_super) {
     __extends(VirtualFileStats, _super);
     function VirtualFileStats(_fileName, _content) {
         var _this = _super.call(this, _fileName) || this;

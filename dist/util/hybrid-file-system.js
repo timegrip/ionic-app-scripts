@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var path_1 = require("path");
 var virtual_file_utils_1 = require("./virtual-file-utils");
-var HybridFileSystem = (function () {
+var HybridFileSystem = /** @class */ (function () {
     function HybridFileSystem(fileCache) {
         this.fileCache = fileCache;
         this.filesStats = {};

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var errors_1 = require("../util/errors");
 var config_1 = require("../util/config");
 var chalk = require("chalk");
-var Logger = (function () {
+var Logger = /** @class */ (function () {
     function Logger(scope) {
         this.start = Date.now();
         this.scope = scope;

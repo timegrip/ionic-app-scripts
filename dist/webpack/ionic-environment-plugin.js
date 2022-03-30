@@ -7,7 +7,7 @@ var logger_1 = require("../logger/logger");
 var hybrid_file_system_factory_1 = require("../util/hybrid-file-system-factory");
 var watch_memory_system_1 = require("./watch-memory-system");
 var ContextElementDependency = require('webpack/lib/dependencies/ContextElementDependency');
-var IonicEnvironmentPlugin = (function () {
+var IonicEnvironmentPlugin = /** @class */ (function () {
     function IonicEnvironmentPlugin(context, writeToDisk) {
         this.context = context;
         this.writeToDisk = writeToDisk;
